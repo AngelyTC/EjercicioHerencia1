@@ -11,13 +11,7 @@ namespace EjercicioHerencia1
         public string Apellido { get; set; }
         public string Direccion { get; set; }
         public DateTime FechaNacimiento { get; set; }
-        public int edad  { get; set; }
+        public int edad { get; set; }
 
-
-        public int Calcular()
-        {
-            //codigo para calcular algo
-            return 1;
-        }
     }
 }
