@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Newtonsoft.Json;
 
 namespace EjercicioHerencia1
 {
@@ -41,9 +42,25 @@ namespace EjercicioHerencia1
             alumno.edad = Convert.ToInt32(txtEdad.Text);
 
             alumnos.Add(alumno);
+                       
+            Guardar();
 
             notast.Clear();
-
         }
+
+        private void Guardar()
+        {
+            //Se serializa (convierte) la lista en formato Json y se guarda en una variable de tipo string
+            string json = JsonConvert.SerializeObject(alumnos);
+
+            //El nombre del archivo
+            string archivo = Server.MapPath("DatosAlumnoss.json");
+
+            //Se escribe la variable que contiene el json al archivo en un solo paso
+            //con WriteAllText se escribe todo de un solo
+            System.IO.File.WriteAllText(archivo, json);
+        }
+
+
     }
 }

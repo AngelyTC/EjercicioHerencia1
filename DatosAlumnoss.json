@@ -1,0 +1,21 @@
+[
+    {
+        "NoCarnet": "01",
+        
+        "Notas": [ 89, 45, 67, 78 ],
+        "nombre": "Angely",
+        "Apellido": "Thomas",
+        "Direccion": "4ta avenida",
+        "FechaNacimiento": "2022-03-27T00:00:00",
+        "edad": 17
+    },
+    {
+        "NoCarnet": "02",
+        "Notas": [ 89, 45, 67, 78 ],
+        "nombre": "Pedro",
+        "Apellido": "Roman",
+        "Direccion": "zona3",
+        "FechaNacimiento": "2022-03-28T00:00:00",
+        "edad": 20
+    }
+]
