@@ -5,10 +5,9 @@ using System.Web;
 
 namespace EjercicioHerencia1
 {
-    public class Alumnos : Persona
+    public class Notas 
     {
-        public string NoCarnet{ get; set; }
-        public List<Notas> Notas { get; set; }
-
+        public int notas { get; set; }
+        public string Curso { get; set; }
     }
 }

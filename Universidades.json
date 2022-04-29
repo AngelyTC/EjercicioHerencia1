@@ -1,0 +1,26 @@
+[
+    {
+        "Nombreuni": "mesoamericana",
+        
+        "Alumno": [
+            {
+                "NoCarnet": "01",
+                "Notas": [
+                    {
+                        "notas": 65,
+                        "Curso": "matematica"
+                    },
+                    {
+                        "notas": 89,
+                        "Curso": "progra"
+                    }
+                ],
+                "nombre": "Angely",
+                "Apellido": "Thomas",
+                "Direccion": "4ta avenida",
+                "FechaNacimiento": "2022-03-28T00:00:00",
+                "edad": 17
+            }
+        ]
+    }
+]

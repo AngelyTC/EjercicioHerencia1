@@ -5,13 +5,15 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Newtonsoft.Json;
+using System.IO;
 
 namespace EjercicioHerencia1
 {
     public partial class _Default : Page
     {
         static List<Alumnos> alumnos = new List<Alumnos>();
-        static List<int> notast = new List<int>();
+        static List<Notas> notast = new List<Notas>();
+        static List<IngresosUniversidad > universidades = new List<IngresosUniversidad >();
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -24,8 +26,12 @@ namespace EjercicioHerencia1
 
         protected void btnNotas_Click(object sender, EventArgs e)
         {
-            int notatemp = Convert.ToInt16(txtNotas.Text);
-            notast.Add(notatemp);
+            Notas nota = new Notas();
+            nota.notas = Convert.ToInt16(txtNotas.Text);
+            nota.Curso = txtCurso.Text;
+           
+            notast.Add(nota);
+
             GridView1.DataSource = notast;
             GridView1.DataBind();
         }
@@ -36,7 +42,7 @@ namespace EjercicioHerencia1
             alumno.NoCarnet = txtCarne.Text;
             alumno.nombre = txtNombre.Text;
             alumno.Apellido = txtApellido.Text;
-            alumno.Notas = notast;
+            alumno.Notas = notast.ToArray().ToList();
             alumno.Direccion = txtDireccion.Text;
             alumno.FechaNacimiento = txtFecha.SelectedDate;
             alumno.edad = Convert.ToInt32(txtEdad.Text);
@@ -45,7 +51,7 @@ namespace EjercicioHerencia1
                        
             Guardar();
 
-            notast.Clear();
+           
         }
 
         private void Guardar()
@@ -61,6 +67,25 @@ namespace EjercicioHerencia1
             System.IO.File.WriteAllText(archivo, json);
         }
 
+        protected void GuardarUni()
+        {
+            string json2 = JsonConvert.SerializeObject(universidades);
+            string archivo2 = Server.MapPath("Universidades.json");
+            System.IO.File.WriteAllText(archivo2, json2);
+        }
 
+     
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            IngresosUniversidad Uni = new IngresosUniversidad();
+            Uni.Nombreuni = DropDownList1.SelectedValue;
+            Uni.Alumno = alumnos.ToArray().ToList();
+
+            universidades.Add(Uni);
+
+            GuardarUni();
+            alumnos.Clear();
+        }
     }
 }

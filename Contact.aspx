@@ -1,17 +1,29 @@
 ﻿<%@ Page Title="Contact" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Contact.aspx.cs" Inherits="EjercicioHerencia1.Contact" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <h2><%: Title %>.</h2>
-    <h3>Your contact page.</h3>
     <address>
-        One Microsoft Way<br />
-        Redmond, WA 98052-6399<br />
-        <abbr title="Phone">P:</abbr>
-        425.555.0100
-    </address>
-
+        &nbsp;</address>
     <address>
-        <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-        <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
+        INGRESOS UNIVERSIDAD</address>
+    <address>
+        <asp:Label ID="Label1" runat="server" Text="Nombre Universidad"></asp:Label>
+        <asp:TextBox ID="txtUni" runat="server"></asp:TextBox>
     </address>
+    <address>
+        <asp:Label ID="Label2" runat="server" Text="Alumnos"></asp:Label>
+        <asp:TextBox ID="txtAlumno" runat="server"></asp:TextBox>
+    </address>
+    <address>
+        <asp:Label ID="Label3" runat="server" Text="Nota"></asp:Label>
+        <asp:TextBox ID="txtNota" runat="server"></asp:TextBox>
+    </address>
+    <address>
+        <asp:Label ID="Label4" runat="server" Text="Nombre de curso"></asp:Label>
+        <asp:TextBox ID="txtCurso" runat="server"></asp:TextBox>
+    </address>
+    <address>
+        <asp:Button ID="btnIngresar" runat="server" OnClick="btnIngresar_Click" Text="Ingresar" />
+    </address>
+    <address>
+        &nbsp;</address>
 </asp:Content>
