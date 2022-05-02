@@ -11,31 +11,65 @@ namespace EjercicioHerencia1
 {
     public partial class Update : System.Web.UI.Page
     {
+        static List<IngresosUniversidad> universidades = new List<IngresosUniversidad>();
+        static string carne1;
         protected void Page_Load(object sender, EventArgs e)
         {
-            //Se crea una lista con la misma estructura que tienen los datos en el archivo
-            List<Alumnos> lista = new List<Alumnos>();
-
-            //El nombre del archivo a utilizar
-            string archivo = Server.MapPath("Datos.json");
-
-            //Se abre el archivo
+            string archivo = Server.MapPath("Universidades.json");
             StreamReader jsonStream = File.OpenText(archivo);
-
-            //Se Lee todo el contenido del archivo y el contenido leído se guarda en una variable cualquiera de tipo string.
-            //aquí no se necesitan ciclos pues el método ReadToEnd() lee todo el contenido de una sola vez.
             string json = jsonStream.ReadToEnd();
-
-            //Se cierra el archivo
             jsonStream.Close();
 
-            //Se deserializa (convierte) la cadena json guardada en la variable, en la estructura que tiene la lista a donde se van a cargar los datos
-            lista = JsonConvert.DeserializeObject<List<Alumnos>>(json);
+            universidades  = JsonConvert.DeserializeObject<List<IngresosUniversidad>>(json);
         }
+
+     protected void GuardarEditado()
+        {
+            string json = JsonConvert.SerializeObject(universidades);
+            string archivo = Server.MapPath("Universidades.json");
+            System.IO.File.WriteAllText(archivo, json);
+        }
+
+
 
         protected void btnBuscar_Click(object sender, EventArgs e)
         {
+            carne1 = txtIngrCarne.Text;
+            bool encontrar = false;
 
+            foreach (var u in universidades)
+            {
+                Alumnos AlEditado = u.Alumno.Find(c => c.NoCarnet == carne1);
+
+                if(AlEditado != null)
+                {
+                    txtNombree.Text = AlEditado.nombre;
+                    txtApellidos.Text = AlEditado.Apellido;
+                    encontrar = true;
+                }
+            }
+                if(!encontrar)
+            {
+                Response.Write("<script>alert('El alumno no se ha encotrado')</script>");
+                carne1 = "";
+            }
+        }
+
+        protected void btnModificar_Click(object sender, EventArgs e)
+        {
+            foreach (var u in universidades)
+            {
+                int editadoAlumno = u.Alumno.FindIndex(c => c.NoCarnet == carne1);
+
+                if (editadoAlumno > -1)
+                {
+                    u.Alumno[editadoAlumno].Apellido = txtApellidos.Text;
+                    u.Alumno[editadoAlumno].nombre = txtNombree.Text;
+
+                    GuardarEditado();
+                }
+ 
+            }
         }
     }
 }

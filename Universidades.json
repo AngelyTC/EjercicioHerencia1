@@ -7,20 +7,28 @@
                 "NoCarnet": "01",
                 "Notas": [
                     {
-                        "notas": 65,
+                        "notas": 87,
                         "Curso": "matematica"
                     },
                     {
-                        "notas": 89,
-                        "Curso": "progra"
+                        "notas": 98,
+                        "Curso": "programacion"
+                    },
+                    {
+                        "notas": 70,
+                        "Curso": "algebra"
                     }
                 ],
                 "nombre": "Angely",
-                "Apellido": "Thomas",
+                "Apellido": "Cortez",
                 "Direccion": "4ta avenida",
-                "FechaNacimiento": "2022-03-28T00:00:00",
+                "FechaNacimiento": "2022-04-25T00:00:00",
                 "edad": 17
             }
         ]
+    },
+    {
+        "Nombreuni": "mesoamericana",
+        "Alumno": []
     }
 ]

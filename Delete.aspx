@@ -9,7 +9,7 @@
     <asp:TextBox ID="txtCarneb" runat="server"></asp:TextBox>
 </p>
 <p>
-    <asp:Button ID="btnBuscarAl" runat="server" Text="Buscar Alumno" />
+    <asp:Button ID="btnBuscarAl" runat="server" Text="Buscar Alumno" OnClick="btnBuscarAl_Click" />
 </p>
 <p>
     Nombre</p>
@@ -22,7 +22,7 @@
     <asp:TextBox ID="txtApellido" runat="server" Enabled="False"></asp:TextBox>
 </p>
 <p>
-    <asp:Button ID="btnBorrar" runat="server" Text="Borrar Datos" />
+    <asp:Button ID="btnBorrar" runat="server" Text="Borrar Datos" OnClick="btnBorrar_Click" />
 </p>
 <p>
 </p>

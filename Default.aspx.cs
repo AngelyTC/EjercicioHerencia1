@@ -34,6 +34,7 @@ namespace EjercicioHerencia1
 
             GridView1.DataSource = notast;
             GridView1.DataBind();
+
         }
 
         protected void btnIngreso_Click(object sender, EventArgs e)
@@ -50,6 +51,7 @@ namespace EjercicioHerencia1
             alumnos.Add(alumno);
                        
             Guardar();
+            notast.Clear ();
 
            
         }
