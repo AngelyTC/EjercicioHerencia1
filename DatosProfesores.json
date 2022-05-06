@@ -1,0 +1,21 @@
+[
+    {
+        "titulo": "Fisico",
+        
+        "idProfesor": "1",
+        "nombre": "Rodolfo",
+        "Apellido": "Cerillis",
+        "Direccion": "zona8",
+        "FechaNacimiento": "2022-04-25T00:00:00",
+        "edad": 0
+    },
+    {
+        "titulo": "Matematico",
+        "idProfesor": "2",
+        "nombre": "Armando",
+        "Apellido": "Cerilla",
+        "Direccion": "zona9",
+        "FechaNacimiento": "2022-04-27T00:00:00",
+        "edad": 0
+    }
+]

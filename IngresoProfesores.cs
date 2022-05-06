@@ -5,9 +5,8 @@ using System.Web;
 
 namespace EjercicioHerencia1
 {
-    public class Catedratico : Persona
+    public class IngresoProfesores
     {
-        public string titulo { get; set; }
-        public string idProfesor { get; set; }
+        public List<Catedratico> profesores12 { get; set; }
     }
 }
