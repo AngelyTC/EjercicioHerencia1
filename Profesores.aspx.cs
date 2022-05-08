@@ -15,7 +15,20 @@ namespace EjercicioHerencia1
         int edadP = 0;
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack )
+            {
+                leerProfe();
+            }
+        }
 
+        protected void leerProfe()
+        {
+            string archivo = Server.MapPath("DatosProfesores.json");
+            StreamReader jsonStream = File.OpenText(archivo);
+            string json = jsonStream.ReadToEnd();
+            jsonStream.Close();
+
+           datosProfesores   = JsonConvert.DeserializeObject<List<Catedratico >>(json);
         }
 
         protected void btnIngreso_Click(object sender, EventArgs e)
@@ -27,8 +40,10 @@ namespace EjercicioHerencia1
             datos1.Direccion = txtDireccionP.Text;
             datos1.FechaNacimiento = Calendar1.SelectedDate;
             datos1.titulo = txtTitulo.Text;
+            datos1.edad = Convert.ToInt32 (txtEdad.Text);
+
             /*datos1.edad = edadP;*/
-            ObtenerEdad();
+           
 
             datosProfesores.Add(datos1);
             GuardarProfesores();
@@ -38,19 +53,23 @@ namespace EjercicioHerencia1
 
         private void GuardarProfesores()
         {
-            string json = JsonConvert.SerializeObject(datosProfesores );
+            string json = JsonConvert.SerializeObject(datosProfesores);
 
             string archivo = Server.MapPath("DatosProfesores.json");
 
-            System.IO.File.WriteAllText(archivo, json);
+            System.IO.File.WriteAllText (archivo, json);
         }
 
         private void ObtenerEdad()
         {
-            /*DateTime FechaToday = DateTime.Today;
-          edadP = (FechaToday.Year  - Convert.ToInt32(Calendar1.SelectedDate) );*/
+           DateTime FechaToday = DateTime.Today;
+          edadP = FechaToday.Year  - Calendar1.SelectedDate.Year;
+             txtEdad.Text = edadP.ToString() ;
         }
 
-
+        protected void btnEdad_Click(object sender, EventArgs e)
+        {
+            ObtenerEdad();
+        }
     }
 }

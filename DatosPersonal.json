@@ -1,0 +1,25 @@
+[
+    {
+        "NoIGSS": "12345",
+        
+        "Profesion": "Matematica",
+        "fechaInicio": "2022-04-24T00:00:00",
+        "fechaFin": "2022-04-26T00:00:00",
+        "nombre": "Luis",
+        "Apellido": "Cortéz",
+        "Direccion": "Zona 1",
+        "FechaNacimiento": "0001-01-01T00:00:00",
+        "edad": 0
+    },
+    {
+        "NoIGSS": "5456",
+        "Profesion": "arquitecta",
+        "fechaInicio": "2022-04-24T00:00:00",
+        "fechaFin": "2022-04-26T00:00:00",
+        "nombre": "Alicia",
+        "Apellido": "ruben",
+        "Direccion": "zona34",
+        "FechaNacimiento": "0001-01-01T00:00:00",
+        "edad": 0
+    }
+]

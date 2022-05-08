@@ -54,8 +54,10 @@
                         <li><a runat="server" href="~/">Inicio</a></li>
                         <li><a runat="server" href="~/Update">Actualizar</a></li>
                         <li><a runat="server" href="~/Delete">Borrar</a></li>
-                         <li><a runat="server" href="~/About">Acerca de</a></li>
-                        <li><a runat="server" href="~/Contact">Contacto</a></li>
+                         <li><a runat="server" href="~/Profesores">Ingreso Profesores</a></li>
+                        <li><a runat="server" href="~/PersonalAdmi">Ingreso Personal</a></li>
+                        <li><a runat="server" href="~/Contact">Ingreso Universidad</a></li>
+                        <li><a runat="server" href="~/DeleteProfesores">Borrar datos profesor</a></li>
                     </ul>
                 </div>
             </div>

@@ -11,22 +11,22 @@ namespace EjercicioHerencia1
 {
     public partial class Update : System.Web.UI.Page
     {
-        static List<IngresosUniversidad> universidades = new List<IngresosUniversidad>();
-        static string carne1;
+        static List<PersonaAdmin> datosAdministra = new List<PersonaAdmin>();
+        static string igss;
         protected void Page_Load(object sender, EventArgs e)
         {
-            string archivo = Server.MapPath("Universidades.json");
+            string archivo = Server.MapPath("DatosPersonal.json");
             StreamReader jsonStream = File.OpenText(archivo);
             string json = jsonStream.ReadToEnd();
             jsonStream.Close();
 
-            universidades  = JsonConvert.DeserializeObject<List<IngresosUniversidad>>(json);
+            datosAdministra = JsonConvert.DeserializeObject<List<PersonaAdmin>>(json);
         }
 
      protected void GuardarEditado()
         {
-            string json = JsonConvert.SerializeObject(universidades);
-            string archivo = Server.MapPath("Universidades.json");
+            string json = JsonConvert.SerializeObject(datosAdministra);
+            string archivo = Server.MapPath("DatosPersonal.json");
             System.IO.File.WriteAllText(archivo, json);
         }
 
@@ -34,41 +34,55 @@ namespace EjercicioHerencia1
 
         protected void btnBuscar_Click(object sender, EventArgs e)
         {
-            carne1 = txtIngrCarne.Text;
+            igss = txtIngrIgss.Text;
             bool encontrar = false;
 
-            foreach (var u in universidades)
+            foreach (var u in datosAdministra)
             {
-                Alumnos AlEditado = u.Alumno.Find(c => c.NoCarnet == carne1);
+                PersonaAdmin AlEditado = datosAdministra.Find(c => c.NoIGSS == igss);
 
                 if(AlEditado != null)
                 {
                     txtNombree.Text = AlEditado.nombre;
                     txtApellidos.Text = AlEditado.Apellido;
+                    txtDireccion.Text = AlEditado.Direccion;
+                    txtProfesionU.Text = AlEditado.Profesion;
+                    CalendarIn.SelectedDate = AlEditado.fechaInicio;
+                    CalendarF.SelectedDate = AlEditado.fechaFin;
                     encontrar = true;
                 }
             }
                 if(!encontrar)
             {
-                Response.Write("<script>alert('El alumno no se ha encotrado')</script>");
-                carne1 = "";
+                Response.Write("<script>alert('El personal no se ha encotrado')</script>");
+                igss = "";
+                txtNombree.Text = " ";
+                txtApellidos.Text = " ";
+                txtDireccion.Text = " ";
+                txtProfesionU.Text = " ";
+
             }
         }
 
         protected void btnModificar_Click(object sender, EventArgs e)
         {
-            foreach (var u in universidades)
+            foreach (var u in datosAdministra)
             {
-                int editadoAlumno = u.Alumno.FindIndex(c => c.NoCarnet == carne1);
+                //en modificar se usa findIndex
+                int editadoAdmin = datosAdministra.FindIndex(c => c.NoIGSS == igss);
 
-                if (editadoAlumno > -1)
+                if (editadoAdmin > -1)
                 {
-                    u.Alumno[editadoAlumno].Apellido = txtApellidos.Text;
-                    u.Alumno[editadoAlumno].nombre = txtNombree.Text;
+                   u.nombre  = txtNombree.Text;
+                    u.Apellido = txtApellidos.Text;
+                    u.Direccion = txtDireccion.Text;
+                    u.Profesion = txtProfesionU.Text;
+                    u.fechaInicio = CalendarIn.SelectedDate;
+                    u.fechaFin = CalendarF.SelectedDate;
 
                     GuardarEditado();
                 }
- 
+
             }
         }
     }

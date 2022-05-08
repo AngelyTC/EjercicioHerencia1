@@ -44,6 +44,7 @@
     </p>
     <p>
         <asp:TextBox ID="txtEdad" runat="server"></asp:TextBox>
+        <asp:Button ID="btnEdad" runat="server" OnClick="btnEdad_Click" Text="Ver edad" Width="123px" />
     </p>
     <p>
         <asp:Button ID="btnIngreso" runat="server" Height="45px" OnClick="btnIngreso_Click" Text="Ingresar" Width="103px" />

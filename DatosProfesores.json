@@ -1,21 +1,21 @@
 [
     {
-        "titulo": "Fisico",
+        "titulo": "Matematico",
         
         "idProfesor": "1",
-        "nombre": "Rodolfo",
-        "Apellido": "Cerillis",
-        "Direccion": "zona8",
-        "FechaNacimiento": "2022-04-25T00:00:00",
+        "nombre": "Pedro",
+        "Apellido": "Roman",
+        "Direccion": "zona3",
+        "FechaNacimiento": "2022-04-24T00:00:00",
         "edad": 0
     },
     {
-        "titulo": "Matematico",
+        "titulo": "Fisico",
         "idProfesor": "2",
-        "nombre": "Armando",
-        "Apellido": "Cerilla",
-        "Direccion": "zona9",
-        "FechaNacimiento": "2022-04-27T00:00:00",
+        "nombre": "Alberto",
+        "Apellido": "Totri",
+        "Direccion": "zona 43",
+        "FechaNacimiento": "2022-04-25T00:00:00",
         "edad": 0
     }
 ]

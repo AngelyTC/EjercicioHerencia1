@@ -38,6 +38,7 @@
         <br />
         Edad<br />
         <asp:TextBox ID="txtEdad" runat="server"></asp:TextBox>
+        <asp:Button ID="btnEdadA" runat="server" Text="Ver edad del Alumno" OnClick="btnEdadA_Click" />
         <br />
         <br />
         I<asp:Button ID="btnIngreso" runat="server" Text="Ingresar" OnClick="btnIngreso_Click" />

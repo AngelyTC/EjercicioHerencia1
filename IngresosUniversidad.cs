@@ -9,5 +9,6 @@ namespace EjercicioHerencia1
     {
         public string Nombreuni { get; set; }       
         public List<Alumnos> Alumno { get; set; }
+
     }
 }

@@ -1,1 +1,17 @@
-[{"NoCarnet":"02","Notas":[{"notas":87,"Curso":"matematica"},{"notas":98,"Curso":"programacion"},{"notas":70,"Curso":"algebra"},{"notas":69,"Curso":"algebra"},{"notas":57,"Curso":"mate"}],"nombre":"Pedro","Apellido":"Roman","Direccion":"zona3","FechaNacimiento":"2022-04-26T00:00:00","edad":29}]
+[
+    {
+        "NoCarnet": "02",
+        
+        "Notas": [
+            {
+                "notas": 65,
+                "Curso": "ciencias"
+            }
+        ],
+        "nombre": "Nandini",
+        "Apellido": "Cortez",
+        "Direccion": "zona13",
+        "FechaNacimiento": "2022-04-25T00:00:00",
+        "edad": 0
+    }
+]

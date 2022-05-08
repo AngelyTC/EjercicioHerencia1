@@ -7,28 +7,35 @@
                 "NoCarnet": "01",
                 "Notas": [
                     {
-                        "notas": 87,
-                        "Curso": "matematica"
-                    },
-                    {
-                        "notas": 98,
-                        "Curso": "programacion"
-                    },
-                    {
-                        "notas": 70,
-                        "Curso": "algebra"
+                        "notas": 34,
+                        "Curso": "ciencias"
                     }
                 ],
                 "nombre": "Angely",
-                "Apellido": "Cortez",
+                "Apellido": "Thomas",
                 "Direccion": "4ta avenida",
-                "FechaNacimiento": "2022-04-25T00:00:00",
-                "edad": 17
+                "FechaNacimiento": "2022-04-24T00:00:00",
+                "edad": 0
             }
         ]
     },
     {
-        "Nombreuni": "mesoamericana",
-        "Alumno": []
+        "Nombreuni": "Landivar",
+        "Alumno": [
+            {
+                "NoCarnet": "02",
+                "Notas": [
+                    {
+                        "notas": 65,
+                        "Curso": "ciencias"
+                    }
+                ],
+                "nombre": "Nandini",
+                "Apellido": "Cortez",
+                "Direccion": "zona13",
+                "FechaNacimiento": "2022-04-25T00:00:00",
+                "edad": 0
+            }
+        ]
     }
 ]

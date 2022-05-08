@@ -12,7 +12,7 @@ namespace EjercicioHerencia1
 {
     public partial class DeleteProfesores : System.Web.UI.Page
     {
-        static List<Catedratico  > profesoresLista = new List<Catedratico>();
+        static List<Catedratico > profesoresLista = new List<Catedratico>();
         static string ID2;
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -59,12 +59,11 @@ namespace EjercicioHerencia1
             foreach (var u in profesoresLista)
             {
                 Catedratico CateEliminado = profesoresLista.Find(c => c.idProfesor == ID2);
-
                 if (CateEliminado != null)
                 {
                     profesoresLista.Remove(CateEliminado);
-                }
-
+                    break;
+                }                           
             }
             GuardarBorradoP();
         }

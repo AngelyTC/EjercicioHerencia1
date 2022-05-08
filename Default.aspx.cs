@@ -14,14 +14,45 @@ namespace EjercicioHerencia1
         static List<Alumnos> alumnos = new List<Alumnos>();
         static List<Notas> notast = new List<Notas>();
         static List<IngresosUniversidad > universidades = new List<IngresosUniversidad >();
+        int edadA=0;
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                leerUniversidad();
+                leerAlumno();
+            }
+        }
+            protected void leerUniversidad()
+        {
+            string archivo = Server.MapPath("Universidades.json");
+            StreamReader jsonStream = File.OpenText(archivo);
+            string json = jsonStream.ReadToEnd();
+            jsonStream.Close();
 
+            universidades = JsonConvert.DeserializeObject<List<IngresosUniversidad>>(json);
+        }
+
+        protected void leerAlumno()
+        {
+            string archivo = Server.MapPath("DatosAlumnoss.json");
+            StreamReader jsonStream = File.OpenText(archivo);
+            string json = jsonStream.ReadToEnd();
+            jsonStream.Close();
+
+            alumnos = JsonConvert.DeserializeObject<List<Alumnos>>(json);
         }
 
         protected void TextBox2_TextChanged(object sender, EventArgs e)
         {
+            
+        }
 
+        private void ObtenerEdadA()
+        {
+            DateTime FechaToday = DateTime.Today;
+            edadA = FechaToday.Year - txtFecha.SelectedDate.Year;
+            txtEdad.Text = edadA.ToString();
         }
 
         protected void btnNotas_Click(object sender, EventArgs e)
@@ -56,6 +87,7 @@ namespace EjercicioHerencia1
            
         }
 
+
         private void Guardar()
         {
             //Se serializa (convierte) la lista en formato Json y se guarda en una variable de tipo string
@@ -84,10 +116,17 @@ namespace EjercicioHerencia1
             Uni.Nombreuni = DropDownList1.SelectedValue;
             Uni.Alumno = alumnos.ToArray().ToList();
 
+
             universidades.Add(Uni);
 
             GuardarUni();
+
             alumnos.Clear();
+        }
+
+        protected void btnEdadA_Click(object sender, EventArgs e)
+        {
+            ObtenerEdadA();
         }
     }
 }

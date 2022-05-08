@@ -1,6 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="DeleteProfesores.aspx.cs" Inherits="EjercicioHerencia1.DeleteProfesores" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <p>
+        &nbsp;</p>
+<p style="font-size: x-large">
+        INGRESO PROFESORES</p>
+<p>
         <br />
         <asp:Label ID="Label1" runat="server" Text="ID Profesor"></asp:Label>
     </p>
